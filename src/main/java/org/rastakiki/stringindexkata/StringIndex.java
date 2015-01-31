@@ -7,19 +7,19 @@ public class StringIndex {
             return new int[]{};
         }
 
-        int[] inexValue = new int[input.length()];
-        inexValue[0] = -1;
+        int[] indexValue = new int[input.length()];
+        indexValue[0] = -1;
 
         if (input.length() > 2) {
-            inexValue[1] = 0;
+            indexValue[1] = 0;
             for (int i = 2; i < input.length(); i++) {
                 int previousCharIndex = i - 1;
-                if (input.charAt(previousCharIndex) == input.charAt(inexValue[previousCharIndex])) {
-                    inexValue[i] = 1 + inexValue[previousCharIndex];
+                if (input.charAt(previousCharIndex) == input.charAt(indexValue[previousCharIndex])) {
+                    indexValue[i] = 1 + indexValue[previousCharIndex];
                 }
             }
         }
-        return inexValue;
+        return indexValue;
     }
 
 }
